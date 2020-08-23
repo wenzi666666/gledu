@@ -78,12 +78,14 @@
                     <div class="l"> <strong>课程公告:</strong> <a  href="javascript:void(0)">{{ course.course_notice }}</a> </div>
                 </div>
 
+
                 <div class="mod-chapters">
                 {% for lesson in course.lessoninfo_set.all %}
                     <div class="chapter chapter-active" >
                         <h3>
                             <strong><i class="state-expand"></i>{{ lesson.name}}</strong>
                         </h3>
+
                         <ul class="video">
                         {% for video in lesson.videoinfo_set.all %}
                             <li>

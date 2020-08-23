@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from .views import course_list, course_detail, course_video
+from .views import course_list, course_detail, course_video, video
 
 app_name = 'courses'
 
@@ -23,4 +23,5 @@ urlpatterns = [
     path('course_list/', course_list, name='course_list'),
     path('course_detail/<int:course_id>/', course_detail, name='course_detail'),
     path('course_video/<int:course_id>/', course_video, name='course_video'),
+    path('video/<int:video_id>/', video, name='video'),
 ]

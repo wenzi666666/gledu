@@ -38,3 +38,14 @@ def course_video(request,course_id):
         }
 
         return render(request, 'course/course-video.html', context=context)
+
+
+def video(request,video_id):
+    video = VideoInfo.objects.get(id=int(video_id))
+    course = video.lesson_info.course_info
+
+    context = {
+        'video': video,
+        'course': course
+    }
+    return render(request, 'course/course-play.html', context=context)
